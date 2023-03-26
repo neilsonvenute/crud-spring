@@ -32,7 +32,7 @@ public class CourseController {
     public ResponseEntity<Course> findById(@PathVariable Long id) {
         return courseRepository.findById(id).map(record -> ResponseEntity.ok().body(record))
                 .orElse(ResponseEntity.notFound().build());
-    }
+    }	
 
     @PostMapping
     @ResponseStatus(code = HttpStatus.CREATED)
